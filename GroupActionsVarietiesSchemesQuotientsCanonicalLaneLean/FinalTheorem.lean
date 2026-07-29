@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean.GroupActionVariety
+import GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean.SchemeQuotient
+import GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean.InvariantRing
+import GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean.GeometricInvariantTheory
+import GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean.QuotientStack
+
+namespace HautevilleHouse
+namespace GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean
+
+def ConstrainedGroupActionsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_group_actions_endgame (A : AdmissibleClass) :
+    ConstrainedGroupActionsClosure A :=
+by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GroupActionsVarietiesSchemesQuotientsCanonicalLaneLean
+end HautevilleHouse
